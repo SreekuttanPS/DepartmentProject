@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>teacher registration</title>
+<style>
+    body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #34495e;
+}
+.box{
+  width: 700px;
+  padding: 40px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #fff9f9;
+  text-align: center;
+}
+.box h1{
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 500px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+  width: 280px;
+  border-color: #2ecc71;
+}
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: BLACK;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover{  
+  background: #2ecc71;
+}.box input[type = "reset"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "reset"]:hover{  
+  background: #2ecc71;
+}
+</style>
+
+<script> function VALIDATION() 
+  {
+     var email = document.forms["teacherreg"]["email"];
+     var phone = document.getElementById('phone').value;
+     var password = document.getElementById('pass').value;
+     var bg = document.getElementById('bg').value;
+     if(email.value.indexOf("@",0)<0)
+     {
+       window.alert("Please enter a valid email address.");
+       email.focus();
+       return false;
+     } 
+     if(email.value.indexOf(".",0)<0)
+     {
+       window.alert("Please enter a valid email address.");
+       email.focus();
+       return false;
+     }
+     if(password.length<8)
+     {
+       window.alert("Password must carry 8 characters!!");
+       document.getElementById('pass').focus();
+       return false;
+     }
+     if(phone.length<10)
+     {
+       window.alert("please enter a valid phone number!!");
+       document.getElementById('phone').focus();
+       return false;
+     }
+     if(bg!="A+" && bg!="A-" && bg!="B-" && bg!="B+" && bg!="AB-" && bg!="AB+" && bg!="O-" && bg!="O+")
+     {
+      window.alert("please enter a valid blood group!!");
+      document.getElementById('bg').focus();
+       return false;
+     }
+     return true;
+  } </script>
+<body>
+<center>
+<form method="POST" class="box" action="teacherreg.php" name="teacherreg" onsubmit="return VALIDATION()">
+    <h1>TEACHER REGISTRATION</h1>
+<table>
+<tr><td>Email :</td><td><input type="text"name="email"required placeholder="Enter your Email id"><br></td></tr>
+<tr><td>Password :</td><td><input type="password"name="password" required placeholder="Enter your Password" id="pass"><br></td></tr>
+<tr><td>Name :</td><td><input type="text"name="name"required placeholder="Enter your name"><br></td></tr>
+<tr><td>Adress :</td><td><input type="text"name="address"required placeholder="Enter your address"><br></td></tr>
+<tr><td>Phone :</td><td><input type="text"name="phone"required placeholder="Enter your phone number" id="phone"><br></td></tr>
+<tr><td>Blood group :</td><td><input type="text"name="blood"required placeholder="Enter your Blood group" id="bg"><br></td></tr>
+<tr><td>Joining date :</td><td><input type="text"name="joindate"required placeholder="yy/mm/dd"><br></td></tr>
+<tr><td><input type="reset"name="reset"value="clear all"></td>
+<td><input type="submit"name="submit"value="save"></td></tr>
+</table>
+</center>
+</form>
+</body></html
+
